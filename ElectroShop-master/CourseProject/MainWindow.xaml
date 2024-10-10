@@ -1,0 +1,139 @@
+﻿<!-- Определяет класс окна и его пространство имен -->
+<!-- Пространство имен для WPF -->
+<!-- Пространство имен для XAML -->
+<!-- Пространство имен для Blend-дизайна -->
+<!-- Пространство имен для совместимости разметки -->
+<!-- Локальное пространство имен для проекта -->
+<!-- Игнорировать пространство имен 'd' во время выполнения -->
+<!-- Установка фона окна на темно-синий цвет -->
+<!-- Заголовок окна и его размеры, центрирование при запуске -->
+
+<Window x:Class="CourseProject.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CourseProject"
+        mc:Ignorable="d" 
+        Background="#1f3282"
+        Title="Authentication Window" Height="750" Width="800" WindowStartupLocation="CenterScreen">
+
+    <Grid>
+		<!-- Основной контейнер для размещения элементов управления -->
+        <Grid.RowDefinitions>
+			<!-- Определение строк в сетке -->
+            <RowDefinition Height="10" ></RowDefinition>
+			<!-- Первая строка с высотой 10 пикселей -->
+            <RowDefinition ></RowDefinition>
+			<!-- Вторая строка с автоматической высотой -->
+            <RowDefinition></RowDefinition>
+			<!-- Третья строка с автоматической высотой -->
+            <RowDefinition></RowDefinition>
+			<!-- Четвертая строка с автоматической высотой -->
+            <RowDefinition Height="10" ></RowDefinition>
+			<!-- Пятая строка с высотой 10 пикселей -->
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+			<!-- Определение столбцов в сетке -->
+            <ColumnDefinition Width="10" ></ColumnDefinition>
+			<!-- Первый столбец с шириной 10 пикселей -->
+            <ColumnDefinition></ColumnDefinition>
+			<!-- Второй столбец с автоматической шириной -->
+            <ColumnDefinition></ColumnDefinition>
+			<!-- Третий столбец с автоматической шириной -->
+            <ColumnDefinition Width="10" ></ColumnDefinition>
+			<!-- Четвертый столбец с шириной 10 пикселей -->
+        </Grid.ColumnDefinitions>
+
+		<!-- Кнопка для перехода на страницу регистрации -->
+        <Button Style="{StaticResource ButtonStyle1}"
+         Content="Registration" Grid.Row="2" Grid.Column="2" 
+         HorizontalAlignment="Left" Margin="129,142,0,0" 
+         Click="Button_Click_Registration"/>
+
+		<!-- Кнопка для входа в систему -->
+        <Button Style="{StaticResource ButtonStyle1}"
+         Content="Log in" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" 
+         Margin="26,142,0,0" Click="Button_Click_Log_in"/>
+
+		<!-- Кнопка для выхода из приложения -->
+        <Button Style="{StaticResource ButtonStyle1}"
+         Content="Exit"
+         Margin="26,147,0,0" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Left" 
+         Click="Button_Click_Exit"/>
+
+		<!-- Кнопка для связи (функционал не задан) -->
+        <Button Style="{StaticResource ButtonStyle1}"
+         Content="Contact"
+         Margin="129,147,0,0" Grid.Row="3" Grid.Column="2" HorizontalAlignment="Left"/>
+
+		<!-- Заголовок приложения (название магазина) -->
+        <TextBlock Grid.Column="1" 
+         Style="{StaticResource TextBlockStyle2}" 
+         HorizontalAlignment="Left" 
+         TextWrapping="Wrap" 
+         Text="Electro Shop" 
+         VerticalAlignment="Top" Grid.ColumnSpan="2" Width="458" Grid.Row="1" Margin="205,10,0,0"/>
+
+		<!-- Поле ввода для логина пользователя -->
+        <TextBox Grid.Column="1" 
+         Name="userLoginToCheck"
+         Style="{StaticResource TextBoxStyle1}"
+         HorizontalAlignment="Center" TextWrapping="Wrap" 
+         VerticalAlignment="Top"  
+         Grid.ColumnSpan="2" Grid.Row="1" Margin="0,134,0,0"/>
+
+		<!-- Текстовый блок для отображения надписи "Login" -->
+        <TextBlock Grid.Column="1" 
+         Style="{StaticResource TextBlockStyle1}" 
+         HorizontalAlignment="Left" 
+         Margin="205,103,0,0" 
+         TextWrapping="Wrap" 
+         Text="Login" 
+         VerticalAlignment="Top" Grid.ColumnSpan="2" Width="220" Grid.Row="1"/>
+
+		<!-- Поле для ввода пароля пользователя -->
+        <PasswordBox Grid.Column="1"
+         Name="userPasswordToCheck"
+         Style="{StaticResource TextPasswordBox}"
+         PasswordChar="*"
+         HorizontalAlignment="Center" 
+         Margin="0,31,0,0" 
+         VerticalAlignment="Top"  
+         Grid.ColumnSpan="2" Grid.Row="2"/>
+
+		<!-- Текстовый блок для отображения надписи "Password" -->
+        <TextBlock Grid.Column="1" 
+         Style="{StaticResource TextBlockStyle1}" 
+         HorizontalAlignment="Left" 
+         Margin="205,238,0,0" 
+         TextWrapping="Wrap" 
+         Text="Password" 
+         VerticalAlignment="Top" Grid.ColumnSpan="2" Width="220" Grid.Row="1" Grid.RowSpan="2"/>
+
+		<!-- Текстовый блок для отображения сообщений об ошибках -->
+        <TextBlock Grid.Column="1" 
+         Name="errorData"
+         Style="{StaticResource TextBlockStyle1}" 
+         HorizontalAlignment="Left" 
+         TextWrapping="Wrap" 
+         VerticalAlignment="Top" Grid.ColumnSpan="2" Width="452" Grid.Row="2" Margin="261,111,0,0"/>
+
+		<!-- Изображение (иконка), расположенное в сетке -->
+        <Image Source="/CourseProject;component/Icon/icon1.ico" 
+         Margin="240,203,240,99" Grid.Column="1" Grid.ColumnSpan="2" 
+         Grid.Row="2" Grid.RowSpan="2" />
+
+		<!-- Изображение (иконка), расположенное в сетке -->
+        <Image Source="/CourseProject;component/Icon/icon2.ico" 
+         Margin="105,29,167,137" Grid.Column="1" 
+         Grid.Row="2" />
+
+		<!-- Изображение (иконка), расположенное в сетке -->
+        <Image Source="/CourseProject;component/Icon/icon4.ico" 
+         Margin="113,139,173,39" 
+         Grid.Row="1" Grid.Column="1" />
+
+    </Grid>
+</Window>

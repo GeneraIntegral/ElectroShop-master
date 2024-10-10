@@ -1,0 +1,255 @@
+﻿<CourseProject Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Fonts\A.AlleycatICG.Alen_.Rus_.ttf" />
+    <None Remove="Fonts\Beast Impacted_0.ttf" />
+    <None Remove="Fonts\ljk_Ambient-Medium.ttf" />
+    <None Remove="Fonts\Lletraferida.otf" />
+    <None Remove="Fonts\Neoneon1.otf" />
+    <None Remove="Fonts\Zaychik-Regular.ttf" />
+    <None Remove="Icon\icon1.ico" />
+    <None Remove="Icon\icon10.ico" />
+    <None Remove="Icon\icon11.ico" />
+    <None Remove="Icon\icon12.ico" />
+    <None Remove="Icon\icon13.ico" />
+    <None Remove="Icon\icon14.ico" />
+    <None Remove="Icon\icon15.ico" />
+    <None Remove="Icon\icon16.ico" />
+    <None Remove="Icon\icon2.ico" />
+    <None Remove="Icon\icon3.ico" />
+    <None Remove="Icon\icon4.ico" />
+    <None Remove="Icon\icon5.ico" />
+    <None Remove="Icon\icon6.ico" />
+    <None Remove="Icon\icon7.ico" />
+    <None Remove="Icon\icon8.ico" />
+    <None Remove="Icon\icon9.ico" />
+    <None Remove="Image\123.jpg" />
+    <None Remove="Image\124.jpg" />
+    <None Remove="Image\125.jpg" />
+    <None Remove="Image\126.jpg" />
+    <None Remove="Image\127.jpg" />
+    <None Remove="Image\128.jpg" />
+    <None Remove="Image\129.jpg" />
+    <None Remove="Image\130.jpg" />
+    <None Remove="Image\131.jpg" />
+    <None Remove="Image\132.jpg" />
+    <None Remove="Image\Computers\001.jpg" />
+    <None Remove="Image\Computers\002.jpg" />
+    <None Remove="Image\Computers\003.jpg" />
+    <None Remove="Image\Computers\004.jpg" />
+    <None Remove="Image\Computers\005.jpg" />
+    <None Remove="Image\Computers\006.jpg" />
+    <None Remove="Image\Irons\001.jpg" />
+    <None Remove="Image\Irons\002.jpg" />
+    <None Remove="Image\Irons\003.jpg" />
+    <None Remove="Image\Irons\004.jpg" />
+    <None Remove="Image\Irons\005.jpg" />
+    <None Remove="Image\Irons\006.jpg" />
+    <None Remove="Image\Laptops\123.jpg" />
+    <None Remove="Image\Laptops\124.jpg" />
+    <None Remove="Image\Laptops\125.jpg" />
+    <None Remove="Image\Laptops\126.jpg" />
+    <None Remove="Image\Laptops\127.jpg" />
+    <None Remove="Image\Laptops\128.jpg" />
+    <None Remove="Image\Laptops\129.jpg" />
+    <None Remove="Image\Laptops\130.jpg" />
+    <None Remove="Image\Laptops\131.jpg" />
+    <None Remove="Image\Laptops\132.jpg" />
+    <None Remove="Image\Smartphones\001.jpg" />
+    <None Remove="Image\Smartphones\002.jpg" />
+    <None Remove="Image\Smartphones\003.jpg" />
+    <None Remove="Image\Smartphones\004.jpg" />
+    <None Remove="Image\Smartphones\005.jpg" />
+    <None Remove="Image\Smartphones\006.jpg" />
+    <None Remove="Image\Washing Machines\001.jpg" />
+    <None Remove="Image\Washing Machines\002.jpg" />
+    <None Remove="Image\Washing Machines\003.jpg" />
+    <None Remove="Image\Washing Machines\004.jpg" />
+    <None Remove="Image\Washing Machines\005.jpg" />
+    <None Remove="Image\Washing Machines\006.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Fonts\A.AlleycatICG.Alen_.Rus_.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Fonts\Beast Impacted_0.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Fonts\ljk_Ambient-Medium.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Fonts\Lletraferida.otf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Fonts\Neoneon1.otf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Fonts\Zaychik-Regular.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icon\icon1.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icon\icon10.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icon\icon11.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icon\icon12.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icon\icon13.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icon\icon14.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icon\icon15.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icon\icon16.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icon\icon2.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icon\icon3.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icon\icon4.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icon\icon5.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icon\icon6.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icon\icon7.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icon\icon8.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Icon\icon9.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Image\Computers\001.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Image\Computers\002.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Image\Computers\003.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Image\Computers\004.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Image\Computers\005.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Image\Computers\006.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Image\Irons\001.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Image\Irons\002.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Image\Irons\003.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Image\Irons\004.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Image\Irons\005.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Image\Irons\006.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Image\Laptops\123.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Image\Laptops\124.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Image\Laptops\125.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Image\Laptops\126.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Image\Laptops\127.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Image\Laptops\128.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Image\Laptops\129.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Image\Laptops\130.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Image\Laptops\131.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Image\Laptops\132.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Image\Smartphones\001.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Image\Smartphones\002.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Image\Smartphones\003.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Image\Smartphones\004.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Image\Smartphones\005.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Image\Smartphones\006.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Image\Washing Machines\001.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Image\Washing Machines\002.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Image\Washing Machines\003.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Image\Washing Machines\004.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Image\Washing Machines\005.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Image\Washing Machines\006.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+</CourseProject>

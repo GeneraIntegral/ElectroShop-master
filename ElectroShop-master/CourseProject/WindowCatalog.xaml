@@ -1,0 +1,225 @@
+﻿<!-- Определение класса окна -->
+<!-- Пространство имен для XAML -->
+<!-- Пространство имен для расширений XAML -->
+<!-- Пространство имен для Blend-дизайна -->
+<!-- Пространство имен для совместимости разметки -->
+<!-- Локальное пространство имен для проекта -->
+<!-- Игнорировать пространство имен 'd' во время выполнения -->
+<!-- Задание фона окна -->
+<!-- Заголовок, размер и расположение окна -->
+
+<Window x:Class="CourseProject.WindowCatalog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CourseProject"
+        mc:Ignorable="d"
+        Background="#1f3282"
+        Title="WindowCatalog" Height="750" Width="800" WindowStartupLocation="CenterScreen">
+    <Grid>
+
+        <Grid.RowDefinitions>
+			<!-- Контейнер для размещения элементов -->
+            <RowDefinition Height="10" ></RowDefinition>
+			<!-- Определение строк в сетке -->
+            <RowDefinition ></RowDefinition>
+			<!-- Отступ сверху -->
+            <RowDefinition></RowDefinition>
+			<!-- Основная строка для контента -->
+            <RowDefinition></RowDefinition>
+			<!-- Дополнительная строка для контента -->
+            <RowDefinition Height="10" ></RowDefinition>
+			<!-- Отступ снизу -->
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+			<!-- Определение столбцов в сетке -->
+            <ColumnDefinition Width="10" ></ColumnDefinition>
+			<!-- Отступ слева -->
+            <ColumnDefinition></ColumnDefinition>
+			<!-- Основной столбец для контента -->
+            <ColumnDefinition></ColumnDefinition>
+			<!-- Дополнительный столбец для контента -->
+            <ColumnDefinition Width="10" ></ColumnDefinition>
+			<!-- Отступ справа -->
+        </Grid.ColumnDefinitions>
+
+		<!-- Текстовый блок, размещенный во втором столбце -->
+		<!-- Применение стиля для текстового блока -->
+		<!-- Центрирование по горизонтали -->
+		<!-- Перенос текста, если он не помещается в строку -->
+		<!-- Занимает два столбца и две строки -->
+        <TextBlock Grid.Column="1" 
+         Style="{StaticResource TextBlockStyle2}" 
+         HorizontalAlignment="Center" 
+         TextWrapping="Wrap"  
+         VerticalAlignment="Top" Grid.ColumnSpan="2" Width="250" Grid.RowSpan="2">
+         <Run Text="Catalog"/>
+			<!-- Статический текст "Catalog" -->
+         <Run Text="{Binding User.Login}"/>
+			<!-- Привязка к имени пользователя из модели представления -->
+        </TextBlock>
+
+		<!-- Выпадающий список для выбора категории -->
+		<!-- Привязка источника данных к списку категорий -->
+		<!-- Указание, какое свойство отображать в элементе списка -->
+		<!-- Привязка выбранной категории с двусторонним обновлением -->
+		<!-- Обработчик события изменения выбора категории -->
+		<!-- Центрирование по горизонтали -->
+		<!-- Ширина комбобокса -->
+		<!-- Отступы и размещение в сетке -->
+        <ComboBox 
+            ItemsSource="{Binding Categories}" 
+            DisplayMemberPath="Name"
+            SelectedItem="{Binding SelectedCategory, Mode=TwoWay}"
+            SelectionChanged="CategorySelectionChanged"
+            HorizontalAlignment="Center"
+            Width="266"
+            Margin="0,49,0,150" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2"/>
+
+		<!-- Прокручиваемый контейнер для отображения данных -->
+		<!-- Автоматическое отображение вертикальной полосы прокрутки при необходимости -->
+		<!-- Автоматическое отображение горизонтальной полосы прокрутки при необходимости -->
+		<!-- Занимает два столбца и три строки -->
+        <ScrollViewer 
+            Grid.Row="1" 
+            Margin="0,97,10,119" 
+            VerticalScrollBarVisibility="Auto" 
+            HorizontalScrollBarVisibility="Auto" Grid.ColumnSpan="2" Grid.RowSpan="3" Grid.Column="1">
+
+			<!-- Таблица для отображения списка продуктов -->
+			<!-- Имя элемента для доступа из кода -->
+			<!-- Привязка источника данных к списку продуктов -->
+			<!-- Отключение автоматической генерации колонок -->
+			<!-- Задание высоты заголовков и строк таблицы -->
+            <DataGrid 
+             x:Name="ProductDataGrid" 
+             ItemsSource="{Binding Products}" 
+             AutoGenerateColumns="False" 
+             Height="498" 
+             Width="786" 
+             ColumnHeaderHeight="40" 
+             RowHeight="150">
+
+                <DataGrid.Columns>
+					<!-- Определение колонок для DataGrid -->
+                    <DataGridTemplateColumn Header="Image" Width="250">
+						<!-- Колонка для отображения изображений -->
+                        <DataGridTemplateColumn.CellTemplate>
+							<!-- Шаблон для ячеек в колонке -->
+                            <DataTemplate>
+								<!-- Привязка источника изображения к свойству ImagePath -->
+								<!-- Ширина изображения -->
+								<!-- Высота изображения -->
+								<!-- Отступы вокруг изображения -->
+								<!-- Соотношение сторон при растяжении изображения -->
+                                <Image 
+                                    Source="{Binding ImagePath}" 
+                                    Width="220" 
+                                    Height="140" 
+                                    Margin="5" 
+                                    Stretch="Uniform"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTextColumn Header="Name" Binding="{Binding Name}" Width="150">
+						<!-- Колонка для отображения названия товара -->
+                        <DataGridTextColumn.ElementStyle>
+							<!-- Стиль для элементов в колонке -->
+                            <Style TargetType="TextBlock">
+								<!-- Определение стиля для текстового блока -->
+                                <Setter Property="FontSize" Value="16"/>
+								<!-- Размер шрифта -->
+                                <Setter Property="FontWeight" Value="Bold"/>
+								<!-- Жирный шрифт -->
+                                <Setter Property="Foreground" Value="#3949AB"/>
+								<!-- Цвет текста -->
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+
+                    <DataGridTextColumn Header="Price" Binding="{Binding Price, StringFormat=C}" Width="100">
+						<!-- Колонка для отображения цены товара -->
+                        <DataGridTextColumn.ElementStyle>
+							<!-- Стиль для элементов в колонке -->
+                            <Style TargetType="TextBlock">
+								<!-- Определение стиля для текстового блока -->
+                                <Setter Property="FontSize" Value="16"/>
+								<!-- Размер шрифта -->
+                                <Setter Property="FontWeight" Value="Bold"/>
+								<!-- Жирный шрифт -->
+                                <Setter Property="Foreground" Value="DarkGreen"/>
+								<!-- Цвет текста -->
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+
+                    <DataGridTextColumn Header="Weight" Binding="{Binding Weight}" Width="70">
+						<!-- Колонка для отображения веса товара -->
+                        <DataGridTextColumn.ElementStyle>
+							<!-- Стиль для элементов в колонке -->
+                            <Style TargetType="TextBlock">
+								<!-- Определение стиля для текстового блока -->
+                                <Setter Property="FontSize" Value="16"/>
+								<!-- Размер шрифта -->
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+
+                    <DataGridTextColumn Header="Description" Binding="{Binding Description}" Width="150">
+						<!-- Колонка для отображения описания товара -->
+                        <DataGridTextColumn.ElementStyle>
+							<!-- Стиль для элементов в колонке -->
+                            <Style TargetType="TextBlock">
+								<!-- Определение стиля для текстового блока -->
+                                <Setter Property="FontSize" Value="14"/>
+								<!-- Размер шрифта -->
+                                <Setter Property="TextWrapping" Value="Wrap"/>
+								<!-- Перенос текста при необходимости -->
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+
+                </DataGrid.Columns>
+            </DataGrid>
+        </ScrollViewer>
+
+		<!-- Кнопка выхода из приложения -->
+		<!-- Размещение кнопки в сетке -->
+		<!-- Обработчик события нажатия кнопки -->
+        <Button Style="{StaticResource ButtonStyle1}"
+                Content="Exit" 
+                Grid.Row="3" Grid.Column="1" 
+                Margin="25,172,0,0" 
+                HorizontalAlignment="Left" 
+                Click="Button_Click_Exit"/>
+
+		<!-- Кнопка для добавления товара в избранное -->
+		<!-- Обработчик события нажатия кнопки -->
+		<!-- Занимает два столбца в сетке -->
+        <Button Content="Add to favorites"
+                Click="AddToFavorites_Click"
+                Style="{StaticResource ButtonStyle1}"
+                Grid.ColumnSpan="2" 
+                Margin="0,172,0,0" 
+                Grid.Column="1" 
+                Grid.Row="3"/>
+
+		<!-- Изображение иконки приложения -->
+        <Image Source="/CourseProject;component/Icon/icon14.ico" 
+         Margin="84,1,194,141" 
+         Grid.Row="1" Grid.Column="1" />
+
+		<!-- Имя текстового блока для отображения ошибок -->
+        <TextBlock Grid.Column="1"
+         x:Name="errors"
+         Style="{StaticResource TextBlockStyle1}" 
+         HorizontalAlignment="Center" 
+         TextWrapping="Wrap"  
+         VerticalAlignment="Top" Grid.ColumnSpan="2" Width="704" Margin="0,140,0,0" Grid.Row="3" Height="32"/>
+
+
+    </Grid>
+</Window>
